@@ -2,6 +2,7 @@
   "jspm": {
     "name": "BadMoviePoll",
     "dependencies": {
+      "jsonp": "npm:jsonp@^0.1.0",
       "jsx": "^0.1.1",
       "react": "^0.12.2"
     }

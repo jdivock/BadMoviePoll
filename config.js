@@ -164,6 +164,7 @@ System.config({
 
 System.config({
   "map": {
+    "jsonp": "npm:jsonp@0.1.0",
     "jsx": "github:floatdrop/plugin-jsx@0.1.1",
     "react": "npm:react@0.12.2",
     "github:floatdrop/plugin-jsx@0.1.1": {
@@ -210,6 +211,9 @@ System.config({
     },
     "github:jspm/nodelibs-string_decoder@0.1.0": {
       "string_decoder": "npm:string_decoder@0.10.31"
+    },
+    "github:jspm/nodelibs-tty@0.1.0": {
+      "tty-browserify": "npm:tty-browserify@0.0.0"
     },
     "github:jspm/nodelibs-url@0.1.0": {
       "url": "npm:url@0.10.2"
@@ -323,6 +327,14 @@ System.config({
       "stream": "github:jspm/nodelibs-stream@0.1.0",
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
+    "npm:debug@2.1.1": {
+      "fs": "github:jspm/nodelibs-fs@0.1.0",
+      "ms": "npm:ms@0.6.2",
+      "net": "github:jspm/nodelibs-net@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.0",
+      "tty": "github:jspm/nodelibs-tty@0.1.0",
+      "util": "github:jspm/nodelibs-util@0.1.0"
+    },
     "npm:diffie-hellman@2.2.2": {
       "bn.js": "npm:bn.js@0.16.1",
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
@@ -398,6 +410,9 @@ System.config({
       "fs": "github:jspm/nodelibs-fs@0.1.0",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.0"
+    },
+    "npm:jsonp@0.1.0": {
+      "debug": "npm:debug@2.1.1"
     },
     "npm:jstransform@7.0.0": {
       "base62": "npm:base62@0.1.1",
