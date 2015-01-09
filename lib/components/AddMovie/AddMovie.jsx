@@ -23,11 +23,13 @@ var MovieSearchResults = React.createClass({
 
 		var movieResults = this.props.results
 			.filter(movie  => !!movie.release_dates.dvd)
-			.map(movie => <MovieResult movie={movie}></MovieResult>);
+			.map(movie => <MovieResult key={movie.id} movie={movie}></MovieResult>);
 
 		return(
-			<table>
-			{movieResults}
+			<table className="pure-table">
+				<tbody>
+					{movieResults}
+				</tbody>
 			</table>
 		);
 	}
@@ -36,22 +38,31 @@ var MovieSearchResults = React.createClass({
 
 var AddMovie = React.createClass({
 	getInitialState: function(){
-		var self = this;
-		Movies.search('ghost').then( resp => self.setState({searchResults: resp.movies}) );
+		this.testLoad(); // Remove me when this starts working
 
 		return {
 			// searchResults: []
 		};
 	},
-	searchMovies: function(){
+	testLoad: function(){
+		var self = this;
+		Movies.search('ghost').then( resp => self.setState({searchResults: resp.movies}) );
+	},
+	searchMovies: function(e){
+		e.preventDefault();
+		var self = this;
 		Movies.search(this.refs.movieName.getDOMNode().value).then(resp => self.setState({searchResults: resp.movies}));
 	},
 	render: function(){
 		return(
 			<div>
-				<input ref="movieName" type="text"></input>
-				<button type="submit" onClick={this.searchMovies}>Search</button>
-				<MovieSearchResults results={this.state.searchResults}></MovieSearchResults>
+				<form className="pure-form">
+					<fieldset>
+						<input ref="movieName" type="text"></input>
+						<button className="pure-button pure-button-primary" type="submit" onClick={this.searchMovies}>Search</button>
+					</fieldset>
+					<MovieSearchResults results={this.state.searchResults}></MovieSearchResults>
+				</form>
 			</div>
 		);
 	}
