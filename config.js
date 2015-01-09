@@ -167,6 +167,7 @@ System.config({
     "jsonp": "npm:jsonp@0.1.0",
     "jsx": "github:floatdrop/plugin-jsx@0.1.1",
     "react": "npm:react@0.12.2",
+    "react-router": "npm:react-router@0.11.6",
     "github:floatdrop/plugin-jsx@0.1.1": {
       "react-tools": "npm:react-tools@0.12.2"
     },
@@ -475,6 +476,16 @@ System.config({
     "npm:q@1.1.2": {
       "process": "github:jspm/nodelibs-process@0.1.0"
     },
+    "npm:qs@2.2.2": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0"
+    },
+    "npm:react-router@0.11.6": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.0",
+      "qs": "npm:qs@2.2.2",
+      "react": "npm:react@0.12.2",
+      "when": "npm:when@3.4.6"
+    },
     "npm:react-tools@0.12.2": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "commoner": "npm:commoner@0.10.1",
@@ -556,6 +567,9 @@ System.config({
     },
     "npm:vm-browserify@0.0.4": {
       "indexof": "npm:indexof@0.0.1"
+    },
+    "npm:when@3.4.6": {
+      "process": "github:jspm/nodelibs-process@0.1.0"
     }
   }
 });
