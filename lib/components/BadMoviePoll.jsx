@@ -9,6 +9,7 @@ var BadMoviePoll = React.createClass({
 	render: function() {
 		return (
 			<div>
+				<Login></Login>
 				<AddMovie></AddMovie>
 			</div>
 		);

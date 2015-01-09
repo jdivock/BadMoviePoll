@@ -38,7 +38,7 @@ var MovieSearchResults = React.createClass({
 
 var AddMovie = React.createClass({
 	getInitialState: function(){
-		this.testLoad(); // Remove me when this starts working
+		// this.testLoad(); // Remove me when this starts working
 
 		return {
 			// searchResults: []
