@@ -7,8 +7,8 @@ var Movies = React.createClass({
 	render: function(){
 		return (
 			<section>
-				<AddMovie></AddMovie>
-				<VotingMovies></VotingMovies>
+				<AddMovie votingMovies={this.props.votingMovies}></AddMovie>
+				<VotingMovies votingMovies={this.props.votingMovies}></VotingMovies>
 			</section>
 		);
 	}

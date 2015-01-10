@@ -39,9 +39,7 @@ var BadMoviePoll = React.createClass({
 		var content = '';
 
 		if(this.state.auth.isLoggedIn){
-			content = (
-				<Movies></Movies>
-			);
+			content = <Movies votingMovies={this.state.votingMovies}></Movies>;
 		} else {
 			content = <Login></Login>;
 		}

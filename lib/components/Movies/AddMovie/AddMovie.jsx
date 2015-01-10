@@ -1,7 +1,10 @@
 import React from 'react';
-import Movies from 'lib/Movies';
+import MovieService from 'lib/Movies';
 
 var MovieResult = React.createClass({
+	addMovie: function(){
+		MovieService.addMovieToPoll(this.props.movie);
+	},
 	render: function(){
 		return(
 			<tr>
@@ -48,7 +51,7 @@ var AddMovie = React.createClass({
 	searchMovies: function(e){
 		e.preventDefault();
 		var self = this;
-		Movies.search(this.refs.movieName.getDOMNode().value).then(resp => self.setState({searchResults: resp.movies}));
+		MovieService.search(this.refs.movieName.getDOMNode().value).then(resp => self.setState({searchResults: resp.movies}));
 	},
 	render: function(){
 		return(
