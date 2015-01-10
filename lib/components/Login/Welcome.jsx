@@ -6,5 +6,4 @@ var Welcome = React.createClass({
 	}
 });
 
-
 export default  Welcome;

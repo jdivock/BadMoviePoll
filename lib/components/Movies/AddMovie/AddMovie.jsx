@@ -5,6 +5,9 @@ var MovieResult = React.createClass({
 	render: function(){
 		return(
 			<tr>
+				<td onClick={this.addMovie} className="movie-add">
+					<i className="fa fa-plus"></i>
+				</td>
 				<td><img src={this.props.movie.posters.thumbnail}/></td>
 				<td>{this.props.movie.title} ({this.props.movie.year})</td>
 				<td>Rating: {this.props.movie.ratings.critics_rating}</td>
@@ -26,7 +29,7 @@ var MovieSearchResults = React.createClass({
 			.map(movie => <MovieResult key={movie.id} movie={movie}></MovieResult>);
 
 		return(
-			<table className="pure-table">
+			<table className="pure-table movie-results">
 				<tbody>
 					{movieResults}
 				</tbody>
@@ -38,15 +41,9 @@ var MovieSearchResults = React.createClass({
 
 var AddMovie = React.createClass({
 	getInitialState: function(){
-		// this.testLoad(); // Remove me when this starts working
-
 		return {
-			// searchResults: []
+			searchResults: []
 		};
-	},
-	testLoad: function(){
-		var self = this;
-		Movies.search('ghost').then( resp => self.setState({searchResults: resp.movies}) );
 	},
 	searchMovies: function(e){
 		e.preventDefault();
