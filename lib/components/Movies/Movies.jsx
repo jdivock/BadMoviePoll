@@ -7,8 +7,14 @@ var Movies = React.createClass({
 	render: function(){
 		return (
 			<section>
-				<AddMovie votingMovies={this.props.votingMovies}></AddMovie>
-				<VotingMovies votingMovies={this.props.votingMovies}></VotingMovies>
+				<AddMovie
+					votingMovies={this.props.votingMovies}
+					auth={this.props.auth}
+				></AddMovie>
+				<VotingMovies
+					votingMovies={this.props.votingMovies}
+					auth={this.props.auth}
+				></VotingMovies>
 			</section>
 		);
 	}

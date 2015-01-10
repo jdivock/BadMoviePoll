@@ -19,10 +19,10 @@ var BadMoviePoll = React.createClass({
 			votingMovies: movies
 		});
 	},
-	_onLoggedIn: function(name, isLoggedIn){
+	_onLoggedIn: function(profile, isLoggedIn){
 		this.setState({
 			auth: {
-				name: Auth.name,
+				profile: Auth.profile,
 				isLoggedIn: Auth.isLoggedIn
 			}
 		});
@@ -30,7 +30,7 @@ var BadMoviePoll = React.createClass({
 	getInitialState: function(){
 		return {
 			auth: {
-				name: Auth.name,
+				profile: Auth.profile,
 				isLoggedIn: Auth.isLoggedIn
 			}
 		};
@@ -39,7 +39,13 @@ var BadMoviePoll = React.createClass({
 		var content = '';
 
 		if(this.state.auth.isLoggedIn){
-			content = <Movies votingMovies={this.state.votingMovies}></Movies>;
+			content = (
+				<Movies
+					votingMovies={this.state.votingMovies}
+					auth={this.state.auth}
+				>
+				</Movies>
+			);
 		} else {
 			content = <Login></Login>;
 		}

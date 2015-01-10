@@ -3,7 +3,8 @@ import MovieService from 'lib/Movies';
 
 var MovieResult = React.createClass({
 	addMovie: function(){
-		MovieService.addMovieToPoll(this.props.movie);
+		MovieService.addMovieToPoll(this.props.movie, this.props.auth.profile);
+		this.props.clearResults();
 	},
 	render: function(){
 		return(
@@ -29,7 +30,13 @@ var MovieSearchResults = React.createClass({
 
 		var movieResults = this.props.results
 			.filter(movie  => !!movie.release_dates.dvd)
-			.map(movie => <MovieResult key={movie.id} movie={movie}></MovieResult>);
+			.map(movie =>
+					<MovieResult
+						auth={this.props.auth}
+						key={movie.id}
+						movie={movie}
+						clearResults={this.props.clearResults}>
+					</MovieResult>);
 
 		return(
 			<table className="pure-table movie-results">
@@ -53,6 +60,12 @@ var AddMovie = React.createClass({
 		var self = this;
 		MovieService.search(this.refs.movieName.getDOMNode().value).then(resp => self.setState({searchResults: resp.movies}));
 	},
+	clearResults: function(){
+		this.setState({
+			searchResults: []
+		});
+		this.refs.movieName.getDOMNode().value = null;
+	},
 	render: function(){
 		return(
 			<div>
@@ -61,7 +74,12 @@ var AddMovie = React.createClass({
 						<input ref="movieName" type="text"></input>
 						<button className="pure-button pure-button-primary" type="submit" onClick={this.searchMovies}>Search</button>
 					</fieldset>
-					<MovieSearchResults results={this.state.searchResults}></MovieSearchResults>
+					<MovieSearchResults
+						auth={this.props.auth}
+						results={this.state.searchResults}
+						clearResults={this.clearResults}
+					>
+					</MovieSearchResults>
 				</form>
 			</div>
 		);

@@ -1,16 +1,18 @@
 import React from 'react';
 import MovieService from 'lib/Movies';
 
+
+// TODO: Show m
 var VotingMovie = React.createClass({
 	voteMovie: function(){
-		MovieService.voteMovie(this.props.movieKey, this.props.movie);
+		MovieService.voteMovie(this.props.movieKey, this.props.movie, this.props.auth.profile);
 	},
 	render: function(){
 		return (
 			<tr>
 				<td>
 					<i className="fa fa-plus" onClick={this.voteMovie}></i>
-					{this.props.movie.votes}
+					{this.props.movie.votes.length}
 				</td>
 				<td><img src={this.props.movie.posters.thumbnail}/></td>
 				<td>{this.props.movie.title} ({this.props.movie.year})</td>
@@ -30,7 +32,13 @@ var VotingMovies = React.createClass({
 		for(var movieKey in this.props.votingMovies){
 			var movie = this.props.votingMovies[movieKey];
 
-			movies.push(<VotingMovie key={movieKey} movieKey={movieKey} movie={movie}></VotingMovie>);
+			movies.push(
+				<VotingMovie
+					key={movieKey}
+					movieKey={movieKey}
+					movie={movie}
+					auth={this.props.auth}>
+				</VotingMovie>);
 		}
 
 		return (
