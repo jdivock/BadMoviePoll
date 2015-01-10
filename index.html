@@ -10,18 +10,8 @@
     <meta name="google-signin-cookiepolicy" content="single_host_origin" />
     <meta name="google-signin-callback" content="signinCallback" />
     <title>Bad Movie Poll</title>
+
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
-    <script src="https://apis.google.com/js/client:platform.js?onload=onLoadCallback" async defer></script>
-    <script>
-    var signinCallback = function(authResult) {
-        console.log('here');
-        if (authResult['status']['signed_in']) {
-            console.log('signedIn');
-        } else {
-            console.log('Sign-in state: ' + authResult['error']);
-        }
-    };
-    </script>
 </head>
 
 <body>
