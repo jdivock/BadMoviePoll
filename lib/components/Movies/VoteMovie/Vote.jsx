@@ -5,7 +5,7 @@ import MovieService from 'lib/MovieService';
 // TODO: Show movies in unauth state
 var VotingMovie = React.createClass({
 	voteMovie: function(){
-		MovieService.voteMovie(this.props.movieKey, this.props.movie, this.props.auth.profile);
+		MovieService.voteForMovie(this.props.movieKey, this.props.auth.profile);
 	},
 	render: function(){
 		return (

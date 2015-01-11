@@ -6,12 +6,22 @@ var MovieResult = React.createClass({
 		MovieService.addMovieToPoll(this.props.movie, this.props.auth.profile);
 		this.props.clearResults();
 	},
+	_buildAddCell: function(){
+		if(this.props.movie.inPoll){
+			return <td className="movie-add">Added</td>;
+		} else {
+			return (
+				<td onClick={this.addMovie} className="movie-add movie-not-added">
+					Add movie to poll
+				</td>
+			);
+		}
+	},
 	render: function(){
+
 		return(
 			<tr>
-				<td onClick={this.addMovie} className="movie-add">
-					<i className="fa fa-plus"></i>
-				</td>
+				{this._buildAddCell()}
 				<td><img src={this.props.movie.posters.thumbnail}/></td>
 				<td>{this.props.movie.title} ({this.props.movie.year})</td>
 				<td>Rating: {this.props.movie.ratings.critics_rating}</td>
@@ -23,13 +33,16 @@ var MovieResult = React.createClass({
 var MovieSearchResults = React.createClass({
 
 	render: function(){
-
 		if(!this.props.results){
 			return (<div></div>);
 		}
 
+		if(!this.props.results.length){
+			return (<div>No Results Found.</div>);
+		}
+
+		// TODO: filter out movie already in voting poll
 		var movieResults = this.props.results
-			.filter(movie  => !!movie.release_dates.dvd)
 			.map(movie =>
 					<MovieResult
 						auth={this.props.auth}
@@ -52,17 +65,17 @@ var MovieSearchResults = React.createClass({
 var AddMovie = React.createClass({
 	getInitialState: function(){
 		return {
-			searchResults: []
+			searchResults: null
 		};
 	},
 	searchMovies: function(e){
 		e.preventDefault();
 		var self = this;
-		MovieService.search(this.refs.movieName.getDOMNode().value).then(resp => self.setState({searchResults: resp.movies}));
+		MovieService.search(this.refs.movieName.getDOMNode().value).then(resp => self.setState({searchResults: resp}));
 	},
 	clearResults: function(){
 		this.setState({
-			searchResults: []
+			searchResults: null
 		});
 		this.refs.movieName.getDOMNode().value = null;
 	},
