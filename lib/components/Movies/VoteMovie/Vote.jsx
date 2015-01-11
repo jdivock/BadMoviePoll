@@ -1,8 +1,8 @@
 import React from 'react';
-import MovieService from 'lib/Movies';
+import MovieService from 'lib/MovieService';
 
 
-// TODO: Show m
+// TODO: Show movies in unauth state
 var VotingMovie = React.createClass({
 	voteMovie: function(){
 		MovieService.voteMovie(this.props.movieKey, this.props.movie, this.props.auth.profile);

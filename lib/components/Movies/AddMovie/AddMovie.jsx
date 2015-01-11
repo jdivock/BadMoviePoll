@@ -1,5 +1,5 @@
 import React from 'react';
-import MovieService from 'lib/Movies';
+import MovieService from 'lib/MovieService';
 
 var MovieResult = React.createClass({
 	addMovie: function(){

@@ -1,0 +1,17 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "/Users/jdivock/Projects/BadMoviePoll"
+		}
+	],
+	"settings": {
+        "todoreview": {
+            "exclude_folders": [
+                "*.git",
+                "*jspm_packages*"
+            ]
+        }
+    }
+}

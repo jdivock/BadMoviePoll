@@ -166,6 +166,7 @@ System.config({
   "map": {
     "jsonp": "npm:jsonp@0.1.0",
     "jsx": "github:floatdrop/plugin-jsx@0.1.1",
+    "lodash": "npm:lodash@2.4.1",
     "react": "npm:react@0.12.2",
     "react-router": "npm:react-router@0.11.6",
     "github:floatdrop/plugin-jsx@0.1.1": {
@@ -429,6 +430,9 @@ System.config({
       "fs": "github:jspm/nodelibs-fs@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.0",
       "source-map": "npm:source-map@0.1.31"
+    },
+    "npm:lodash@2.4.1": {
+      "process": "github:jspm/nodelibs-process@0.1.0"
     },
     "npm:miller-rabin@1.1.5": {
       "bn.js": "npm:bn.js@1.0.0",
