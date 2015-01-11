@@ -10,13 +10,13 @@ var VotingMovie = React.createClass({
 	render: function(){
 		return (
 			<tr>
-				<td>
+				<td className="movie-add">
 					<i className="fa fa-plus" onClick={this.voteMovie}></i>
 					{this.props.movie.votes.length}
 				</td>
 				<td><img src={this.props.movie.posters.thumbnail}/></td>
 				<td>{this.props.movie.title} ({this.props.movie.year})</td>
-				<td>Rating: {this.props.movie.ratings.critics_rating}</td>
+				<td>{this.props.movie.ratings.critics_rating}</td>
 			</tr>
 		);
 	}
@@ -42,14 +42,7 @@ var VotingMovies = React.createClass({
 		}
 
 		return (
-			<table className="pure-table">
-				<thead>
-					<tr>
-						<td>Votes</td>
-						<td colSpan="2">Movie</td>
-						<td>Rating</td>
-					</tr>
-				</thead>
+			<table className="pure-table pure-table-striped voting-movies">
 				<tbody>
 				{movies}
 				</tbody>

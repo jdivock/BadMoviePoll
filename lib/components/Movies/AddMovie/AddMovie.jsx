@@ -6,9 +6,19 @@ var MovieResult = React.createClass({
 		MovieService.addMovieToPoll(this.props.movie, this.props.auth.profile);
 		this.props.clearResults();
 	},
+	voteMovie: function(){
+
+		console.log(this.props.movie);
+		MovieService.voteForMovie(this.props.movie.key, this.props.auth.profile);
+	},
 	_buildAddCell: function(){
-		if(this.props.movie.inPoll){
-			return <td className="movie-add">Added</td>;
+		if(this.props.movie.votes){
+			return(
+				<td className="movie-add">
+					<i className="fa fa-plus" onClick={this.voteMovie}></i>
+					{this.props.movie.votes.length}
+				</td>
+			);
 		} else {
 			return (
 				<td onClick={this.addMovie} className="movie-add movie-not-added">
@@ -24,7 +34,7 @@ var MovieResult = React.createClass({
 				{this._buildAddCell()}
 				<td><img src={this.props.movie.posters.thumbnail}/></td>
 				<td>{this.props.movie.title} ({this.props.movie.year})</td>
-				<td>Rating: {this.props.movie.ratings.critics_rating}</td>
+				<td>{this.props.movie.ratings.critics_rating}</td>
 			</tr>
 		);
 	}
@@ -52,11 +62,13 @@ var MovieSearchResults = React.createClass({
 					</MovieResult>);
 
 		return(
-			<table className="pure-table movie-results">
-				<tbody>
-					{movieResults}
-				</tbody>
-			</table>
+			<div className="table-wrap movie-search-results">
+				<table className="pure-table pure-table-striped">
+					<tbody>
+						{movieResults}
+					</tbody>
+				</table>
+			</div>
 		);
 	}
 });

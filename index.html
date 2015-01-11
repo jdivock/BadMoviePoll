@@ -17,13 +17,39 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
 
     <style>
+    body {
+    	margin: 1rem;
+    }
+    table {
+    	width: 100%;
+    }
 
+    td {
+    	text-align: center;
+    	width: 15%;
+    }
+
+    td + td + td {
+    	width: 60%;
+    	text-align: left;
+    }
+
+    .table-wrap {
+    	max-height: 24rem;
+		overflow-y: scroll;
+		border-bottom: 1px solid #cbcbcb;
+    }
     .movie-add {
     	text-align: center;
     }
     .movie-not-added {
     	cursor: pointer;
     }
+
+    .movie-search-results {
+    	margin-bottom: 3rem;
+    }
+
     </style>
 </head>
 
