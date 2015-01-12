@@ -2,18 +2,31 @@ import React from 'react';
 import MovieService from 'lib/MovieService';
 
 
-// TODO: Show movies in unauth state
-var VotingMovie = React.createClass({
+var VoteCell = React.createClass({
 	voteMovie: function(){
 		MovieService.voteForMovie(this.props.movie.movieKey, this.props.auth.profile);
 	},
 	render: function(){
+
+		return (
+			<td className="movie-add">
+				<button className="pure-button" onClick={this.voteMovie}>
+					<i className="fa fa-plus"></i>
+				</button>
+			</td>
+		);
+	}
+
+});
+
+// TODO: Show movies in unauth state
+var VotingMovie = React.createClass({
+
+	render: function(){
 		return (
 			<tr>
-				<td className="movie-add">
-					<i className="fa fa-plus" onClick={this.voteMovie}></i>
-					{this.props.movie.votes.length}
-				</td>
+				<VoteCell auth={this.props.auth} movie={this.props.movie}></VoteCell>
+				<td>{this.props.movie.votes.length}</td>
 				<td><img src={this.props.movie.posters.thumbnail}/></td>
 				<td>{this.props.movie.title} ({this.props.movie.year})</td>
 				<td>{this.props.movie.ratings.critics_rating}</td>

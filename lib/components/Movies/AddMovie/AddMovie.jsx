@@ -15,14 +15,16 @@ var MovieResult = React.createClass({
 		if(this.props.movie.votes){
 			return(
 				<td className="movie-add">
-					<i className="fa fa-plus" onClick={this.voteMovie}></i>
-					{this.props.movie.votes.length}
+					<button className="pure-button" onClick={this.voteMovie}>
+						Vote:
+						{this.props.movie.votes.length}
+					</button>
 				</td>
 			);
 		} else {
 			return (
 				<td onClick={this.addMovie} className="movie-add movie-not-added">
-					Add movie to poll
+					<button className="pure-button pure-button-primary">Add movie to poll</button>
 				</td>
 			);
 		}
@@ -51,8 +53,8 @@ var MovieSearchResults = React.createClass({
 			return (<div>No Results Found.</div>);
 		}
 
-		// TODO: filter out movie already in voting poll
 		var movieResults = this.props.results
+			.slice(0,4)
 			.map(movie =>
 					<MovieResult
 						auth={this.props.auth}
