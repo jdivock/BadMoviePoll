@@ -5,7 +5,7 @@ import MovieService from 'lib/MovieService';
 // TODO: Show movies in unauth state
 var VotingMovie = React.createClass({
 	voteMovie: function(){
-		MovieService.voteForMovie(this.props.movieKey, this.props.auth.profile);
+		MovieService.voteForMovie(this.props.movie.movieKey, this.props.auth.profile);
 	},
 	render: function(){
 		return (
@@ -23,23 +23,42 @@ var VotingMovie = React.createClass({
 
 });
 
-// TODO: sort movies by votes
 var VotingMovies = React.createClass({
+	_sortVotingMovies(movieA, movieB){
+		if( movieA.votes.length > movieB.votes.length){
+			return -1;
+		} else if( movieA.votes.length < movieB.votes.length){
+			return 1;
+		} else {
+			return this._sortMoviesByName(movieA, movieB);
+		}
+
+	},
+	_sortMoviesByName: function(movieA, movieB){
+		if(movieA.title > movieB.title){
+			return 1;
+		} else {
+			return -1;
+		}
+	},
 	render: function(){
 
-		var movies = [];
+		var moviesArr = [];
 
 		for(var movieKey in this.props.votingMovies){
-			var movie = this.props.votingMovies[movieKey];
+			let movieTmp = this.props.votingMovies[movieKey];
+			movieTmp.movieKey = movieKey;
+			moviesArr.push(movieTmp);
+		}
 
-			movies.push(
-				<VotingMovie
-					key={movieKey}
-					movieKey={movieKey}
+		var movies =
+			moviesArr
+				.sort(this._sortVotingMovies)
+				.map( movie => <VotingMovie
+					key={movie.movieKey}
 					movie={movie}
 					auth={this.props.auth}>
 				</VotingMovie>);
-		}
 
 		return (
 			<table className="pure-table pure-table-striped voting-movies">
