@@ -27,7 +27,7 @@ $ npm i -g jspm
 $ jspm install
 ```
 
-Then run it however you feels
+Then run it however you feels ([live-server] is pretty awesome)
 
 ```
 $ live-server
@@ -36,7 +36,7 @@ $ live-server
 or good ole python
 
 ```
-python -m SimpleHTTPServer
+$ python -m SimpleHTTPServer
 ```
 
 ### Todo's
@@ -53,3 +53,4 @@ MIT
 [React]:http://facebook.github.io/react/
 [jspm]:http://jspm.io/
 [systemjs]:https://github.com/systemjs/systemjs
+[live-server]:https://github.com/tapio/live-server
