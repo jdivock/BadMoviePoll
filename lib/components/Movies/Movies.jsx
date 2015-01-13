@@ -6,7 +6,7 @@ import VotingMovies from 'lib/components/Movies/VoteMovie/Vote.jsx!';
 var Movies = React.createClass({
 	render: function(){
 		return (
-			<section>
+			<article>
 				<AddMovie
 					votingMovies={this.props.votingMovies}
 					auth={this.props.auth}
@@ -15,10 +15,9 @@ var Movies = React.createClass({
 					votingMovies={this.props.votingMovies}
 					auth={this.props.auth}
 				></VotingMovies>
-			</section>
+			</article>
 		);
 	}
 });
-
 
 export default Movies;

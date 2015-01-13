@@ -53,11 +53,25 @@ var AddMovie = React.createClass({
 	},
 	render: function(){
 		return(
-			<div>
-				<form className="pure-form">
+			<section className="add-movie-section">
+				<h2>Add Movie</h2>
+				<form className="pure-form search-form">
 					<fieldset>
-						<input ref="movieName" type="text"></input>
-						<button className="pure-button pure-button-primary" type="submit" onClick={this.searchMovies}>Search</button>
+						<label for="search">
+							<input ref="movieName" type="text"></input>
+							<i
+								className="fa fa-close"
+								onClick={this.clearResults}>
+							</i>
+						</label>
+
+						<button
+							className="pure-button pure-button-primary"
+							type="submit"
+							onClick={this.searchMovies}>
+							Search
+						</button>
+
 					</fieldset>
 					<MovieSearchResults
 						auth={this.props.auth}
@@ -66,7 +80,7 @@ var AddMovie = React.createClass({
 					>
 					</MovieSearchResults>
 				</form>
-			</div>
+			</section>
 		);
 	}
 });

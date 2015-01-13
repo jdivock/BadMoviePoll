@@ -40,11 +40,14 @@ var VotingMovies = React.createClass({
 				</MovieRow>);
 
 		return (
-			<table className="pure-table pure-table-striped voting-movies">
-				<tbody>
-				{movies}
-				</tbody>
-			</table>
+			<section>
+				<h2>Vote</h2>
+				<table className="pure-table pure-table-striped voting-movies">
+					<tbody>
+					{movies}
+					</tbody>
+				</table>
+			</section>
 		);
 	}
 });

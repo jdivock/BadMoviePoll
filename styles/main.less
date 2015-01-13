@@ -1,5 +1,68 @@
-.movie-results {
-	i {
-		cursor: pointer;
+body {
+    margin: 1rem;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    text-align: center;
+    width: 15%;
+}
+
+td + td + td {
+    width: 60%;
+    text-align: left;
+}
+
+section {
+    position: relative;
+    border: 1px solid #000;
+    border-radius: 3px;
+    padding: 1.5rem 1rem;
+    margin: 2rem 0;
+
+    h2 {
+	    position: absolute;
+	    background: white;
+	    padding: 0 .25em;
+	    top: -2rem;
+	    left: .5rem;
+	}
+}
+
+.add-movie-section {
+    max-height: 5rem;
+    transition: max-height 0.8s;
+}
+
+.movie-add {
+    text-align: center;
+}
+
+.movie-not-added {
+    cursor: pointer;
+}
+
+.movie-search-results {
+    margin-bottom: 3rem;
+}
+
+.search-form {
+
+	label {
+		position: relative;
+	}
+
+}
+
+label {
+	.fa-close {
+	    cursor: pointer;
+	    position: absolute;
+	    top: 50%;
+	    transform: translate(-50%, -50%);
+	    right: 0;
 	}
 }
