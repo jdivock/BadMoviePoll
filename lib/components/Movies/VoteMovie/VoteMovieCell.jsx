@@ -2,10 +2,12 @@ import React from 'react';
 import MovieService from 'lib/MovieService';
 
 var VoteCell = React.createClass({
-	voteMovie: function(){
+	voteMovie: function(e){
+		e.stopPropagation();
 		MovieService.voteForMovie(this.props.movie.movieKey, this.props.auth.profile);
 	},
-	addMovie: function(){
+	addMovie: function(e){
+		e.stopPropagation();
 		MovieService.addMovieToPoll(this.props.movie, this.props.auth.profile);
 		this.props.clearResults();
 	},
@@ -14,14 +16,14 @@ var VoteCell = React.createClass({
 
 		if(this.props.movie.votes && this.props.movie.votes.length){
 			content = (
-				<button className="pure-button" onClick={this.voteMovie}>
+				<button className="pure-button" type="button" onClick={this.voteMovie}>
 					<i className="fa fa-plus"></i>
 					<span>{this.props.movie.votes.length}</span>
 				</button>
 			);
 		} else {
 			content = (
-				<button onClick={this.addMovie} className="pure-button pure-button-primary">
+				<button onClick={this.addMovie} type="button" className="pure-button pure-button-primary">
 					Add movie to poll
 				</button>
 			);
