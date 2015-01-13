@@ -41,13 +41,9 @@ $ python -m SimpleHTTPServer
 
 ### Todo's
 
-- + for movie not voted, - for movie already voted
-  - subtract vote function
+- wire in debug library
 - Auto-complete for movie search
   - Just auto-execute search with input buffer
-- Combine add / vote movie tables to one component
-- Add movie workflow
-  - clear search button
 - Vote on movie page
   - Link to RT
   - free text filter for table of voting movies
@@ -57,16 +53,14 @@ $ python -m SimpleHTTPServer
 - Case where removing the last vote removes movie from list
 - Handle movies that have already been accepted and viewed
 - Next Movie Night on <x> day showing <y> movie
-- Vote rows and Add movie rows should be the same component
-- Just replace one table with the next when the user searches
 - Better disabled styles
-- Separate vote / total cells
-- Make vote an actual button
+- Clean up movie results with max-height animation
 - Jest tests
   - Maybe some e2e stuff as well
 - Login Page
   - Only allow hugeinc addresses
   - Handle if/when user logs out of G+
+- ? - Just replace one table with the next when the user searches
 
 License
 ----
