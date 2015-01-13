@@ -1,40 +1,6 @@
 import React from 'react';
 import MovieService from 'lib/MovieService';
-
-
-var VoteCell = React.createClass({
-	voteMovie: function(){
-		MovieService.voteForMovie(this.props.movie.movieKey, this.props.auth.profile);
-	},
-	render: function(){
-
-		return (
-			<td className="movie-add">
-				<button className="pure-button" onClick={this.voteMovie}>
-					<i className="fa fa-plus"></i>
-				</button>
-			</td>
-		);
-	}
-
-});
-
-// TODO: Show movies in unauth state
-var VotingMovie = React.createClass({
-
-	render: function(){
-		return (
-			<tr>
-				<VoteCell auth={this.props.auth} movie={this.props.movie}></VoteCell>
-				<td>{this.props.movie.votes.length}</td>
-				<td><img src={this.props.movie.posters.thumbnail}/></td>
-				<td>{this.props.movie.title} ({this.props.movie.year})</td>
-				<td>{this.props.movie.ratings.critics_rating}</td>
-			</tr>
-		);
-	}
-
-});
+import MovieRow from 'lib/components/Movies/MovieRow.jsx!';
 
 var VotingMovies = React.createClass({
 	_sortVotingMovies(movieA, movieB){
@@ -67,11 +33,11 @@ var VotingMovies = React.createClass({
 		var movies =
 			moviesArr
 				.sort(this._sortVotingMovies)
-				.map( movie => <VotingMovie
+				.map( movie => <MovieRow
 					key={movie.movieKey}
 					movie={movie}
 					auth={this.props.auth}>
-				</VotingMovie>);
+				</MovieRow>);
 
 		return (
 			<table className="pure-table pure-table-striped voting-movies">
