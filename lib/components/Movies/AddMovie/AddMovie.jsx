@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react/addons';
 import MovieService from 'lib/MovieService';
 import MovieRow from 'lib/components/Movies/MovieRow.jsx!';
 
@@ -52,12 +52,13 @@ var AddMovie = React.createClass({
 		this.refs.movieName.getDOMNode().value = null;
 	},
 	render: function(){
+
 		return(
-			<section className="add-movie-section">
+			<section className='add-movie-section'>
 				<h2>Add Movie</h2>
 				<form className="pure-form search-form">
 					<fieldset>
-						<label for="search">
+						<label htmlFor="search">
 							<input ref="movieName" type="text"></input>
 							<i
 								className="fa fa-close"
