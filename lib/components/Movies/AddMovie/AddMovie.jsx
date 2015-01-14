@@ -63,7 +63,7 @@ var AddMovie = React.createClass({
 				<form className="pure-form search-form">
 					<fieldset>
 						<label htmlFor="search">
-							<input ref="movieName" type="text"></input>
+							<input ref="movieName" type="search"></input>
 							<i
 								className="fa fa-close"
 								onClick={this.clearResults}>
