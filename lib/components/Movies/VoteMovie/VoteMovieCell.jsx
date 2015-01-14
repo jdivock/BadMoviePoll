@@ -1,5 +1,9 @@
 import React from 'react';
 import MovieService from 'lib/MovieService';
+import debug from 'debug';
+
+let log = debug('BadMoviePoll:VoteMovieCell.jsx');
+
 
 var VoteCell = React.createClass({
 	voteMovie: function(e){
@@ -11,11 +15,13 @@ var VoteCell = React.createClass({
 		MovieService.unvoteForMovie(this.props.movie.movieKey, this.props.auth.profile);
 	},
 	addMovie: function(e){
+		log('adding movie and clearing results');
 		e.preventDefault();
 		MovieService.addMovieToPoll(this.props.movie, this.props.auth.profile);
 		this.props.clearResults();
 	},
 	_didVote: function(auth, votes){
+		log('checking if voted');
 		return votes.find(vote => auth.profile.id === vote.id);
 	},
 	render: function(){

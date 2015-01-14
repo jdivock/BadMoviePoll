@@ -1,6 +1,10 @@
 import React from 'react/addons';
 import MovieService from 'lib/MovieService';
 import MovieRow from 'lib/components/Movies/MovieRow.jsx!';
+import debug from 'debug';
+
+let log = debug('BadMoviePoll:AddMovie.jsx');
+
 
 var MovieSearchResults = React.createClass({
 

@@ -1,6 +1,9 @@
 import React from 'react';
 import MovieService from 'lib/MovieService';
 import MovieRow from 'lib/components/Movies/MovieRow.jsx!';
+import debug from 'debug';
+
+let log = debug('BadMoviePoll:Vote.jsx');
 
 var VotingMovies = React.createClass({
 	_sortVotingMovies(movieA, movieB){

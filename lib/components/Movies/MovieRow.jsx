@@ -1,5 +1,9 @@
 import React from 'react';
 import VoteCell from 'lib/components/Movies/VoteMovie/VoteMovieCell.jsx!';
+import debug from 'debug';
+
+let log = debug('BadMoviePoll:MovieRow.jsx');
+
 
 var MovieRow = React.createClass({
 

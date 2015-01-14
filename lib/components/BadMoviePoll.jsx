@@ -4,6 +4,9 @@ import MovieService from 'lib/MovieService';
 import Movies from 'lib/components/Movies/Movies.jsx!';
 import Login from 'lib/components/Login/Login.jsx!';
 import Welcome from 'lib/components/Login/Welcome.jsx!';
+import debug from 'debug';
+
+let log = debug('BadMoviePoll:BadMoviePoll.jsx');
 
 var BadMoviePoll = React.createClass({
 	componentDidMount: function() {
@@ -15,11 +18,13 @@ var BadMoviePoll = React.createClass({
 		Auth.unregisterLoginHandler(this._onLoggedIn);
 	},
 	_onMovieChange: function(movies){
+		log('movie store change handled');
 		this.setState({
 			votingMovies: movies
 		});
 	},
 	_onLoggedIn: function(profile, isLoggedIn){
+		log('user logged in');
 		this.setState({
 			auth: {
 				profile: Auth.profile,

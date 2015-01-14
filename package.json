@@ -2,6 +2,7 @@
   "jspm": {
     "name": "BadMoviePoll",
     "dependencies": {
+      "debug": "npm:debug@^2.1.1",
       "jsonp": "npm:jsonp@^0.1.0",
       "jsx": "^0.1.1",
       "lodash": "^2.4.1",

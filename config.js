@@ -164,6 +164,7 @@ System.config({
 
 System.config({
   "map": {
+    "debug": "npm:debug@2.1.1",
     "jsonp": "npm:jsonp@0.1.0",
     "jsx": "github:floatdrop/plugin-jsx@0.1.1",
     "lodash": "npm:lodash@2.4.1",
