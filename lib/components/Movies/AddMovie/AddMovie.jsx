@@ -2,6 +2,7 @@ import React from 'react/addons';
 import MovieService from 'lib/MovieService';
 import MovieRow from 'lib/components/Movies/MovieRow.jsx!';
 import debug from 'debug';
+import _ from 'lodash';
 
 let log = debug('BadMoviePoll:AddMovie.jsx');
 
@@ -39,6 +40,16 @@ var MovieSearchResults = React.createClass({
 
 
 var AddMovie = React.createClass({
+	componentDidMount: function() {
+		// Throttle calls to search service since I've bound them to keydown
+		this.throttleSearch = _.throttle(
+			this._search,
+			100);
+	},
+	_search: function(){
+		var self = this;
+		MovieService.search(this.refs.movieName.getDOMNode().value).then(resp => self.setState({searchResults: resp}, function(err){console.log(err);}));
+	},
 	getInitialState: function(){
 		return {
 			searchResults: null
@@ -46,8 +57,8 @@ var AddMovie = React.createClass({
 	},
 	searchMovies: function(e){
 		e.preventDefault();
-		var self = this;
-		MovieService.search(this.refs.movieName.getDOMNode().value).then(resp => self.setState({searchResults: resp}));
+
+		this.throttleSearch();
 	},
 	clearResults: function(){
 		this.setState({
@@ -63,20 +74,12 @@ var AddMovie = React.createClass({
 				<form className="pure-form search-form">
 					<fieldset>
 						<label htmlFor="search">
-							<input ref="movieName" type="search"></input>
+							<input ref="movieName" type="search" onChange={this.searchMovies}></input>
 							<i
 								className="fa fa-close"
 								onClick={this.clearResults}>
 							</i>
 						</label>
-
-						<button
-							className="pure-button pure-button-primary"
-							type="submit"
-							onClick={this.searchMovies}>
-							Search
-						</button>
-
 					</fieldset>
 					<MovieSearchResults
 						auth={this.props.auth}
