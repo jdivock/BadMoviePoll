@@ -8,11 +8,11 @@ var Movies = React.createClass({
 		return (
 			<article>
 				<AddMovie
-					votingMovies={this.props.votingMovies}
+					movies={this.props.movies}
 					auth={this.props.auth}
 				></AddMovie>
 				<VotingMovies
-					votingMovies={this.props.votingMovies}
+					votingMovies={this.props.movies.votingMovies}
 					auth={this.props.auth}
 				></VotingMovies>
 			</article>

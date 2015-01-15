@@ -1,8 +1,6 @@
 # Bad Movie Poll
 
-
 Basic Movie Polling site for Bad Movie Night™ @ Huge
-
 
 ### Version
 0.0.1

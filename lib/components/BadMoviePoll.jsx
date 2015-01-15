@@ -20,7 +20,7 @@ var BadMoviePoll = React.createClass({
 	_onMovieChange: function(movies){
 		log('movie store change handled');
 		this.setState({
-			votingMovies: movies
+			movies: movies
 		});
 	},
 	_onLoggedIn: function(profile, isLoggedIn){
@@ -34,6 +34,7 @@ var BadMoviePoll = React.createClass({
 	},
 	getInitialState: function(){
 		return {
+			movies: MovieService.getMovies(),
 			auth: {
 				profile: Auth.profile,
 				isLoggedIn: Auth.isLoggedIn
@@ -46,7 +47,7 @@ var BadMoviePoll = React.createClass({
 		if(this.state.auth.isLoggedIn){
 			content = (
 				<Movies
-					votingMovies={this.state.votingMovies}
+					movies={this.state.movies}
 					auth={this.state.auth}
 				>
 				</Movies>
