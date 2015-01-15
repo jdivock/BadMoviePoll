@@ -41,19 +41,22 @@ $ python -m SimpleHTTPServer
 
 ### Todo's
 
-- wire in debug library
-- Auto-complete for movie search
-  - Just auto-execute search with input buffer
+- Move to webpack
 - Vote on movie page
-  - Link to RT
   - free text filter for table of voting movies
   - Show who's voted for that movie on mouse-over votes
   - Show movie synopsis on mouse over cover
   - Sort by votes / alpha / year / RT rating
-- Case where removing the last vote removes movie from list
 - Handle movies that have already been accepted and viewed
-- Next Movie Night on <x> day showing <y> movie
+  - Remove movies already watched from search results
+  - Next Movie Night on <x> day showing <y> movie
+- Make service private functions symbols
 - Better disabled styles
+- ES6 stuff
+  - default params
+  - getter/setter
+  - generators?
+- Stop promise canceling and try to set up event stream?
 - Clean up movie results with max-height animation
 - Jest tests
   - Maybe some e2e stuff as well
