@@ -48,7 +48,7 @@ var AddMovie = React.createClass({
 	},
 	_search: function(){
 		var self = this;
-		MovieService.search(this.refs.movieName.getDOMNode().value).then(resp => self.setState({searchResults: resp}, function(err){console.log(err);}));
+		MovieService.search(this.refs.movieName.getDOMNode().value).then(resp => self.setState({searchResults: resp}), err => log(err));
 	},
 	getInitialState: function(){
 		return {
