@@ -43,7 +43,7 @@ var VotingMovies = React.createClass({
 				</MovieRow>);
 
 		return (
-			<section>
+			<section className="vote-movie-section">
 				<h2>Vote</h2>
 				<table className="pure-table pure-table-striped voting-movies">
 					<tbody>
