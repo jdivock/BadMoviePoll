@@ -42,31 +42,34 @@ $ python -m SimpleHTTPServer
 - gah, 'enter' submits form on add movie window
 - Move to webpack
 - Vote on movie page
-	- free text filter for table of voting movies
-	- Show who's voted for that movie on mouse-over votes
-	- Show movie synopsis on mouse over cover
-	- Sort by votes / alpha / year / RT rating
+  - free text filter for table of voting movies
+  - Show who's voted for that movie on mouse-over votes
+  - Show movie synopsis on mouse over cover
+  - Sort by votes / alpha / year / RT rating
 - Watched movies
-	- Admin role
-		- can flag movies as watched near vote
-	- Remove movies already watched from search results
-	- Next Movie Night on <x> day showing <y> movie
+  - Admin role
+    - can flag movies as watched near vote
+  - Remove movies already watched from search results
+  - Next Movie Night on <x> day showing <y> movie
+- Archive movie page
+  - Show movies we've already watched
+  - Leverage some service to show if it's streamable with links
 - Make service private functions symbols
 - Better disabled styles
 - ES6 stuff
-	- default params
-	- getter/setter
-	- generators?
+  - default params
+  - getter/setter
+  - generators?
 - Fix slide-up mechanism
-	- Maybe some react tweener stuff for .slideUp() kind of functionality
+  - Maybe some react tweener stuff for .slideUp() kind of functionality
 - Stop promise canceling and try to set up event stream?
 - Clean up movie results with max-height animation
 - Travis
 - Jest tests
-	- Maybe some e2e stuff as well
+  - Maybe some e2e stuff as well
 - Login Page
-	- Only allow hugeinc addresses
-	- Handle if/when user logs out of G+
+  - Only allow hugeinc addresses
+  - Handle if/when user logs out of G+
 - ? - Just replace one table with the next when the user searches
 
 License
