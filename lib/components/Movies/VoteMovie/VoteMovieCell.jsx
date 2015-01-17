@@ -1,5 +1,5 @@
 import React from 'react';
-import MovieService from 'lib/MovieService';
+import MovieService from 'lib/services/MovieService';
 import debug from 'debug';
 
 let log = debug('BadMoviePoll:VoteMovieCell.jsx');
@@ -40,14 +40,20 @@ var VoteCell = React.createClass({
 			}
 
 			content = (
-				<button className="pure-button vote-button" type="button" onClick={voteFn}>
-					<i className={voteClass}></i>
-					<span>{this.props.movie.votes.length}</span>
+				<button
+					className="pure-button vote-button"
+					type="button"
+					onClick={voteFn}>
+						<i className={voteClass}></i>
+						<span>{this.props.movie.votes.length}</span>
 				</button>
 			);
 		} else {
 			content = (
-				<button onClick={this.addMovie} type="button" className="pure-button pure-button-primary">
+				<button
+					onClick={this.addMovie}
+					type="button"
+					className="pure-button pure-button-primary">
 					Add movie to poll
 				</button>
 			);

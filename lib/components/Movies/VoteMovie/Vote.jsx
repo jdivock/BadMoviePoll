@@ -1,5 +1,5 @@
 import React from 'react';
-import MovieService from 'lib/MovieService';
+import MovieService from 'lib/services/MovieService';
 import MovieRow from 'lib/components/Movies/MovieRow.jsx!';
 import debug from 'debug';
 

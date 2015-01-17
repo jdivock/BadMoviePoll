@@ -1,5 +1,5 @@
 import React from 'react/addons';
-import MovieService from 'lib/MovieService';
+import MovieService from 'lib/services/MovieService';
 import MovieRow from 'lib/components/Movies/MovieRow.jsx!';
 import debug from 'debug';
 import _ from 'lodash';
@@ -67,8 +67,14 @@ var AddMovie = React.createClass({
 	},
 	render: function(){
 
+		var cx = React.addons.classSet;
+		var classes = cx({
+		    'add-movie-section': true,
+		    'has-movies': this.state.searchResults && this.state.searchResults.length > 0
+		});
+
 		return(
-			<section className='add-movie-section'>
+			<section className={classes} onSubmit={e => e.preventDefault()}>
 				<h2>Add Movie</h2>
 				<form className="pure-form search-form">
 					<fieldset>

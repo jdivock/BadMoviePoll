@@ -1,5 +1,11 @@
+#app {
+	margin: 0 auto;
+	max-width: 100rem;
+}
+
 body {
     margin: 1rem;
+    background: #272727;
 }
 
 table {
@@ -21,63 +27,38 @@ td {
 
     img {
     	margin-right: 1rem;
+    	max-height: 5rem;
     }
 }
 
 a {
-	color: inherit;
-	text-decoration: none;
 	color: #0078E7;
+	text-decoration: none;
 }
 
 section {
-    position: relative;
+    background: #fff;
+    border-radius: 1rem;
     border: 1px solid #000;
-    border-radius: 3px;
-    padding: 1.5rem 1rem;
     margin: 2rem 0;
+    padding: 1.5rem 1rem;
+    position: relative;
 
     h2 {
-	    position: absolute;
-	    background: white;
+		font-weight: 500;
+		margin: 0 0 .5rem;
+	    background: #fff;
 	    padding: 0 .25em;
-	    top: -2rem;
-	    left: .5rem;
 	}
 }
 
-.movie-add {
-    text-align: center;
-}
-
-.movie-not-added {
-    cursor: pointer;
-}
-
-.movie-search-results {
-    margin-bottom: 3rem;
-}
-
-.vote-button {
-	span {
-		margin-left: .5rem;
-	}
-}
-
-.search-form {
-
-	label {
-		position: relative;
-	}
-
-}
 
 label {
 	.fa-close {
 	    cursor: pointer;
 	    position: absolute;
+	    right: 0;
 	    top: 50%;
 	    transform: translate(-50%, -50%);
-	    right: 0;
 	}
 }
