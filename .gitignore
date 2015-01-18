@@ -1,3 +1,7 @@
+*.eot
+*.ttf
+*.svg
+*.woff
 node_modules
 bundle.js
 .DS_Store
