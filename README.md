@@ -39,8 +39,8 @@ $ python -m SimpleHTTPServer
 
 ### Todo's
 
-- gah, 'enter' submits form on add movie window
-- Move to webpack
+- Search still a little broken
+  - won't run last search every once in a while
 - Vote on movie page
   - free text filter for table of voting movies
   - Show who's voted for that movie on mouse-over votes
@@ -63,15 +63,21 @@ $ python -m SimpleHTTPServer
 - Fix slide-up mechanism
   - Maybe some react tweener stuff for .slideUp() kind of functionality
 - Stop promise canceling and try to set up event stream?
-- Clean up movie results with max-height animation
-- Travis
+- Light node-backend
+  - Obscure Firebase credentials
+- Webpack notes
+  - In js files I have to specify .jsx, but in .jsx files I can leave it off
+- Make Isomorphic
+  - es6 loader style vs isomorphic
+    - Do I need commonJS to run it in node?
+    - Probably note with --harmony right?
 - Jest tests
+  - Travis
   - Maybe some e2e stuff as well
 - Login Page
   - Only allow hugeinc addresses
   - Handle if/when user logs out of G+
 - ? - Just replace one table with the next when the user searches
-
 License
 ----
 
