@@ -1,5 +1,7 @@
 'use strict';
 
+require('./AddMovie.less');
+
 import React from 'react/addons';
 import MovieService from 'services/MovieService';
 import MovieRow from 'components/Movies/MovieRow';

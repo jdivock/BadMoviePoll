@@ -7,7 +7,9 @@ module.exports = {
 	module: {
 		loaders: [
 			{test: /\.jsx$/, loader: 'traceur?runtime!jsx-loader'},
-			{test: /\.js$/, exclude: /node_modules/, loader: 'traceur?runtime'}
+			{test: /\.js$/, exclude: /node_modules/, loader: 'traceur?runtime'},
+			{test: /\.less$/, loader: 'style-loader!css-loader!less-loader'},
+			{test: /\.css$/, loader: 'style-loader!css-loader'}
 		]
 	},
 	resolve: {

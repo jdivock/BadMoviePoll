@@ -1,5 +1,7 @@
 'use strict';
 
+require('./main.less');
+
 import React from 'react';
 import BadMoviePoll from 'components/BadMoviePoll';
 import debug from 'debug';

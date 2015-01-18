@@ -1,5 +1,7 @@
 'use strict';
 
+require('./Vote.less');
+
 import React from 'react';
 import MovieService from 'services/MovieService';
 import MovieRow from 'components/Movies/MovieRow';

@@ -27,12 +27,16 @@
     "webpack": "^1.5.1"
   },
   "dependencies": {
+    "css-loader": "^0.9.1",
     "debug": "^2.1.1",
+    "firebase": "^2.1.1",
     "jsonp": "^0.1.0",
     "jsx-loader": "^0.12.2",
     "less": "^2.2.0",
     "less-loader": "^2.0.0",
     "lodash": "^2.4.1",
-    "react": "^0.12.2"
+    "purecss": "^0.5.0",
+    "react": "^0.12.2",
+    "style-loader": "^0.8.3"
   }
 }
