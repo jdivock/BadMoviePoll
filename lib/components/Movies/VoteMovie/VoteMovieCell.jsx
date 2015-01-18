@@ -23,7 +23,9 @@ var VoteCell = React.createClass({
 		this.props.clearResults();
 	},
 	_didVote: function(auth, votes){
-		log('checking if voted');
+		log('checking if voted', votes);
+		log(votes.prototype);
+		log(Array.find);
 		return votes.find(vote => auth.profile.id === vote.id);
 	},
 	render: function(){

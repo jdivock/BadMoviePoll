@@ -3,12 +3,12 @@
 import React from 'react';
 import debug from 'debug';
 
-import Auth from '../services/Auth';
-import MovieService from '../services/MovieService';
+import Auth from 'services/Auth';
+import MovieService from 'services/MovieService';
 
-import Movies from './Movies/Movies';
-import Login from './Login/Login';
-import Welcome from './Login/Welcome';
+import Movies from 'components/Movies/Movies';
+import Login from 'components/Login/Login';
+import Welcome from 'components/Login/Welcome';
 
 let log = debug('BadMoviePoll:BadMoviePoll.jsx');
 

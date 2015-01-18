@@ -23,8 +23,7 @@
   },
   "homepage": "https://github.com/jdivock/BadMoviePoll",
   "devDependencies": {
-    "6to5": "^2.13.1",
-    "6to5-loader": "^2.0.0",
+    "traceur-loader": "^0.6.3",
     "webpack": "^1.5.1"
   },
   "dependencies": {

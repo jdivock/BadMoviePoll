@@ -6,8 +6,8 @@ module.exports = {
 	},
 	module: {
 		loaders: [
-			{test: /\.jsx$/, loader: '6to5-loader!jsx-loader'},
-			{test: /\.js$/, exclude: /node_modules/, loader: '6to5-loader'}
+			{test: /\.jsx$/, loader: 'traceur?runtime!jsx-loader'},
+			{test: /\.js$/, exclude: /node_modules/, loader: 'traceur?runtime'}
 		]
 	},
 	resolve: {
