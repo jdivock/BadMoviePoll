@@ -2,8 +2,8 @@
 
 import React from 'react';
 
-import AddMovie from './AddMovie/AddMovie';
-import VotingMovies from './VoteMovie/Vote';
+import AddMovie from 'components/Movies/AddMovie/AddMovie';
+import VotingMovies from 'components/Movies/VoteMovie/Vote';
 
 var Movies = React.createClass({
 	render: function(){
