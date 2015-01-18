@@ -1,5 +1,7 @@
+'use strict';
+
 import React from 'react';
-import VoteCell from 'lib/components/Movies/VoteMovie/VoteMovieCell.jsx!';
+import VoteCell from 'components/Movies/VoteMovie/VoteMovieCell';
 import debug from 'debug';
 
 let log = debug('BadMoviePoll:MovieRow.jsx');

@@ -1,7 +1,9 @@
+'use strict';
+
 import React from 'react';
 
-import AddMovie from 'lib/components/Movies/AddMovie/AddMovie.jsx!';
-import VotingMovies from 'lib/components/Movies/VoteMovie/Vote.jsx!';
+import AddMovie from './AddMovie/AddMovie';
+import VotingMovies from './VoteMovie/Vote';
 
 var Movies = React.createClass({
 	render: function(){

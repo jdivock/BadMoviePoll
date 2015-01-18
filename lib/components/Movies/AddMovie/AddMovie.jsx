@@ -1,6 +1,8 @@
+'use strict';
+
 import React from 'react/addons';
-import MovieService from 'lib/services/MovieService';
-import MovieRow from 'lib/components/Movies/MovieRow.jsx!';
+import MovieService from 'services/MovieService';
+import MovieRow from 'components/Movies/MovieRow';
 import debug from 'debug';
 import _ from 'lodash';
 

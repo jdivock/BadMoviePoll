@@ -1,5 +1,7 @@
+'use strict';
+
 import React from 'react';
-import MovieService from 'lib/services/MovieService';
+import MovieService from 'services/MovieService';
 import debug from 'debug';
 
 let log = debug('BadMoviePoll:VoteMovieCell.jsx');
@@ -21,7 +23,9 @@ var VoteCell = React.createClass({
 		this.props.clearResults();
 	},
 	_didVote: function(auth, votes){
-		log('checking if voted');
+		log('checking if voted', votes);
+		log(votes.prototype);
+		log(Array.find);
 		return votes.find(vote => auth.profile.id === vote.id);
 	},
 	render: function(){

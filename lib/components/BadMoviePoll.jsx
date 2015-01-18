@@ -1,12 +1,14 @@
+'use strict';
+
 import React from 'react';
 import debug from 'debug';
 
-import Auth from 'lib/services/Auth';
-import MovieService from 'lib/services/MovieService';
+import Auth from 'services/Auth';
+import MovieService from 'services/MovieService';
 
-import Movies from 'lib/components/Movies/Movies.jsx!';
-import Login from 'lib/components/Login/Login.jsx!';
-import Welcome from 'lib/components/Login/Welcome.jsx!';
+import Movies from 'components/Movies/Movies';
+import Login from 'components/Login/Login';
+import Welcome from 'components/Login/Welcome';
 
 let log = debug('BadMoviePoll:BadMoviePoll.jsx');
 
