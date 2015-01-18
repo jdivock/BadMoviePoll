@@ -1,13 +1,39 @@
 {
-  "jspm": {
-    "name": "BadMoviePoll",
-    "dependencies": {
-      "debug": "npm:debug@^2.1.1",
-      "jsonp": "npm:jsonp@^0.1.0",
-      "jsx": "^0.1.1",
-      "lodash": "^2.4.1",
-      "react": "npm:react@0.12.2",
-      "react-router": "^0.11.6"
-    }
+  "name": "BadMoviePoll",
+  "version": "1.0.0",
+  "description": "Polling app for BadMovieNight™ @ Huge",
+  "main": "main.jsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jdivock/BadMoviePoll.git"
+  },
+  "keywords": [
+    "reactjs",
+    "es6",
+    "firebase",
+    "webpack"
+  ],
+  "author": "Jason Divock",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jdivock/BadMoviePoll/issues"
+  },
+  "homepage": "https://github.com/jdivock/BadMoviePoll",
+  "devDependencies": {
+    "6to5": "^2.13.1",
+    "6to5-loader": "^2.0.0",
+    "webpack": "^1.5.1"
+  },
+  "dependencies": {
+    "debug": "^2.1.1",
+    "jsonp": "^0.1.0",
+    "jsx-loader": "^0.12.2",
+    "less": "^2.2.0",
+    "less-loader": "^2.0.0",
+    "lodash": "^2.4.1",
+    "react": "^0.12.2"
   }
 }

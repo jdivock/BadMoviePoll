@@ -1,3 +1,4 @@
-jspm_packages
+node_modules
+bundle.js
 .DS_Store
 *.sublime-workspace

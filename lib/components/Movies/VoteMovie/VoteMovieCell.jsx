@@ -1,5 +1,7 @@
+'use strict';
+
 import React from 'react';
-import MovieService from 'lib/services/MovieService';
+import MovieService from 'services/MovieService';
 import debug from 'debug';
 
 let log = debug('BadMoviePoll:VoteMovieCell.jsx');
