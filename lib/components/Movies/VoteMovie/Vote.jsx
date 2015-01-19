@@ -5,9 +5,9 @@ require('./Vote.less');
 import React from 'react';
 import MovieService from 'services/MovieService';
 import MovieRow from 'components/Movies/MovieRow';
-import debug from 'debug';
+import debugLib from 'debug';
 
-let log = debug('BadMoviePoll:Vote.jsx');
+let debug = debugLib('BadMoviePoll:Vote.jsx');
 
 var VotingMovies = React.createClass({
 	_sortVotingMovies(movieA, movieB){
@@ -39,23 +39,24 @@ var VotingMovies = React.createClass({
 
 		var movies =
 			moviesArr
-				.sort(this._sortVotingMovies)
-				.map( movie => <MovieRow
-					key={movie.movieKey}
-					movie={movie}
-					auth={this.props.auth}>
-				</MovieRow>);
+		.sort(this._sortVotingMovies)
+		.map( movie => 
+		     <MovieRow
+			     key={movie.movieKey}
+			     movie={movie}
+			     auth={this.props.auth}>
+		     </MovieRow>);
 
-		return (
-			<section className="vote-movie-section">
-				<h2>Vote</h2>
-				<table className="pure-table pure-table-striped voting-movies">
-					<tbody>
-					{movies}
-					</tbody>
-				</table>
-			</section>
-		);
+		     return (
+			     <section className="vote-movie-section">
+				     <h2>Vote</h2>
+				     <table className="pure-table pure-table-striped voting-movies">
+					     <tbody>
+						     {movies}
+					     </tbody>
+				     </table>
+			     </section>
+		     );
 	}
 });
 

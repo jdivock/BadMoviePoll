@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import debug from 'debug';
+import debugLib from 'debug';
 
 import Auth from 'services/Auth';
 import MovieService from 'services/MovieService';
@@ -11,7 +11,7 @@ import Login from 'components/Login/Login';
 import Welcome from 'components/Login/Welcome';
 import CurrentMovie from 'components/Movies/CurrentMovie';
 
-let log = debug('BadMoviePoll:BadMoviePoll.jsx');
+let debug = debugLib('BadMoviePoll:BadMoviePoll.jsx');
 
 var BadMoviePoll = React.createClass({
 	componentDidMount: function() {
@@ -23,13 +23,13 @@ var BadMoviePoll = React.createClass({
 		Auth.unregisterLoginHandler(this._onLoggedIn);
 	},
 	_onMovieChange: function(movies){
-		log('movie store change handled');
+		debug('movie store change handled');
 		this.setState({
 			movies: movies
 		});
 	},
 	_onLoggedIn: function(profile, isLoggedIn){
-		log('user logged in');
+		debug('user logged in');
 		this.setState({
 			auth: {
 				profile: Auth.profile,
@@ -50,21 +50,23 @@ var BadMoviePoll = React.createClass({
 		var content = '';
 
 		return (
-				<article className='bad-movie-poll'>
-					<Login
-						auth={this.state.auth}
-					/>
-					<CurrentMovie
-						movies={this.state.movies}
-						auth={this.state.auth}
-					/>
-					<Movies
-						movies={this.state.movies}
-						auth={this.state.auth}
-					/>
-
-				</article>
-			);
+			<article className='bad-movie-poll'>
+				<Login
+					auth={this.state.auth}
+					>
+				</Login>
+				<CurrentMovie
+					movies={this.state.movies}
+					auth={this.state.auth}
+					>
+				</CurrentMovie>
+				<Movies
+					movies={this.state.movies}
+					auth={this.state.auth}
+					>
+				</Movies>
+			</article>
+		);
 	}
 
 });
