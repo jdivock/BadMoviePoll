@@ -15,14 +15,14 @@ Basic Movie Polling site for Bad Movie Night™ @ Huge
 
 ### Installation
 
-You need JSPM installed globally:
+You need webpack installed globally:
 
 ```sh
-$ npm i -g jspm
+$ npm i -g webpack
 ```
 
 ```sh
-$ jspm install
+$ npm i
 ```
 
 Then run it however you feels ([live-server] is pretty awesome)

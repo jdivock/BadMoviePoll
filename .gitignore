@@ -3,6 +3,6 @@
 *.svg
 *.woff
 node_modules
-bundle.js
+bundle.js*
 .DS_Store
 *.sublime-workspace
