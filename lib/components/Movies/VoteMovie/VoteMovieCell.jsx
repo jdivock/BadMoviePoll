@@ -23,7 +23,7 @@ var ActiveMovieButton = React.createClass({
 			</button>
 		);
 
-		return this.props.auth.profile.isAdmin ? content : <span></span>;
+		return this.props.auth.profile && this.props.auth.profile.isAdmin ? content : <span></span>;
 	}
 });
 
@@ -45,7 +45,7 @@ var VoteCell = React.createClass({
 	},
 	_didVote: function(auth, votes){
 		debug('checking if voted', votes);
-		return votes.find(vote => auth.profile.id === vote.id);
+		return !!auth.profile && votes.find(vote => auth.profile.id === vote.id);
 	},
 	render: function(){
 		var content;

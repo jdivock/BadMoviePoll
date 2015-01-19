@@ -9,6 +9,7 @@ import MovieService from 'services/MovieService';
 import Movies from 'components/Movies/Movies';
 import Login from 'components/Login/Login';
 import Welcome from 'components/Login/Welcome';
+import CurrentMovie from 'components/Movies/CurrentMovie';
 
 let log = debug('BadMoviePoll:BadMoviePoll.jsx');
 
@@ -48,19 +49,22 @@ var BadMoviePoll = React.createClass({
 	render: function() {
 		var content = '';
 
-		if(this.state.auth.isLoggedIn){
-			content = (
-				<Movies
-					movies={this.state.movies}
-					auth={this.state.auth}
-				>
-				</Movies>
-			);
-		} else {
-			content = <Login></Login>;
-		}
+		return (
+				<article className='bad-movie-poll'>
+					<Login
+						auth={this.state.auth}
+					/>
+					<CurrentMovie
+						movies={this.state.movies}
+						auth={this.state.auth}
+					/>
+					<Movies
+						movies={this.state.movies}
+						auth={this.state.auth}
+					/>
 
-		return content;
+				</article>
+			);
 	}
 
 });
