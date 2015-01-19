@@ -1,4 +1,4 @@
-# Bad Movie Poll
+# Bad Movie Poll [![Build Status](https://travis-ci.org/jdivock/BadMoviePoll.svg?branch=master)](https://travis-ci.org/jdivock/BadMoviePoll)
 
 Basic Movie Polling site for Bad Movie Night™ @ Huge
 
