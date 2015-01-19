@@ -4,10 +4,30 @@ require('./VoteMovieCell.less');
 
 import React from 'react';
 import MovieService from 'services/MovieService';
-import debug from 'debug';
+import debugLib from 'debug';
 
-let log = debug('BadMoviePoll:VoteMovieCell.jsx');
+let debug = debugLib('BadMoviePoll:VoteMovieCell.jsx');
 
+var ActiveMovieButton = React.createClass({
+	_setActiveMovie: function(){
+		MovieService.setActiveMovie(this.props.movie, this.props.auth.profile);
+	},
+	render: function(){
+		var content = (
+			<button
+				className="pure-button set-active-button"
+				type="button"
+				onClick={this._setActiveMovie}
+			>
+			Set Active
+			</button>
+		);
+
+		return this.props.auth.profile.isAdmin ? content : <span></span>;
+	}
+});
+
+// TODO: break otu vote button into it's on self-contaiend button
 var VoteCell = React.createClass({
 	voteMovie: function(e){
 		e.preventDefault();
@@ -18,13 +38,13 @@ var VoteCell = React.createClass({
 		MovieService.unvoteForMovie(this.props.movie.movieKey, this.props.auth.profile);
 	},
 	addMovie: function(e){
-		log('adding movie and clearing results');
+		debug('adding movie and clearing results');
 		e.preventDefault();
 		MovieService.addMovieToPoll(this.props.movie, this.props.auth.profile);
 		this.props.clearResults();
 	},
 	_didVote: function(auth, votes){
-		log('checking if voted', votes);
+		debug('checking if voted', votes);
 		return votes.find(vote => auth.profile.id === vote.id);
 	},
 	render: function(){
@@ -32,6 +52,7 @@ var VoteCell = React.createClass({
 		var voteClass;
 		var voteFn;
 
+		// If movie has votes show vote/unvote, else show add button
 		if(this.props.movie.votes && this.props.movie.votes.length){
 
 			if(this._didVote(this.props.auth, this.props.movie.votes)){
@@ -63,7 +84,11 @@ var VoteCell = React.createClass({
 		}
 
 		return (
-			<td className="movie-add">
+			<td className="vote-movie-cell">
+				<ActiveMovieButton
+					auth={this.props.auth}
+					movie={this.props.movie}
+				/>
 				{content}
 			</td>
 		);
