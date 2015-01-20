@@ -18,8 +18,8 @@ var ActiveMovieButton = React.createClass({
 				className="pure-button set-active-button"
 				type="button"
 				onClick={this._setActiveMovie}
-			>
-			Set Active
+				>
+				Set Active
 			</button>
 		);
 
@@ -68,8 +68,8 @@ var VoteCell = React.createClass({
 					className="pure-button vote-button"
 					type="button"
 					onClick={voteFn}>
-						<i className={voteClass}></i>
-						<span>{this.props.movie.votes.length}</span>
+					<i className={voteClass}></i>
+					<span>{this.props.movie.votes.length}</span>
 				</button>
 			);
 		} else {
@@ -88,7 +88,8 @@ var VoteCell = React.createClass({
 				<ActiveMovieButton
 					auth={this.props.auth}
 					movie={this.props.movie}
-				/>
+					>
+				</ActiveMovieButton>
 				{content}
 			</td>
 		);
