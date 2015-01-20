@@ -5,7 +5,8 @@
   "main": "main.jsx",
   "scripts": {
     "test": "echo \"Oops: no test specified . . . yet\" && exit 0",
-    "postinstall": "webpack -dp"
+    "postinstall": "webpack -dp",
+    "dev": "webpack -wcd"
   },
   "repository": {
     "type": "git",

@@ -9,7 +9,7 @@ import MovieService from 'services/MovieService';
 import Movies from 'components/Movies/Movies';
 import Login from 'components/Login/Login';
 import Welcome from 'components/Login/Welcome';
-import CurrentMovie from 'components/Movies/CurrentMovie';
+import UpcomingMovies from 'components/Movies/UpcomingMovies';
 
 let debug = debugLib('BadMoviePoll:BadMoviePoll.jsx');
 
@@ -55,11 +55,11 @@ var BadMoviePoll = React.createClass({
 					auth={this.state.auth}
 					>
 				</Login>
-				<CurrentMovie
+				<UpcomingMovies
 					movies={this.state.movies}
 					auth={this.state.auth}
 					>
-				</CurrentMovie>
+				</UpcomingMovies>
 				<Movies
 					movies={this.state.movies}
 					auth={this.state.auth}

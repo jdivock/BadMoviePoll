@@ -1,6 +1,6 @@
 'use strict';
 
-require('./Vote.less');
+require('./VotingMovies.less');
 
 import React from 'react';
 import MovieService from 'services/MovieService';
@@ -37,26 +37,24 @@ var VotingMovies = React.createClass({
 			moviesArr.push(movieTmp);
 		}
 
-		var movies =
-			moviesArr
+		var movies = moviesArr
 		.sort(this._sortVotingMovies)
-		.map( movie => 
-		     <MovieRow
-			     key={movie.movieKey}
-			     movie={movie}
-			     auth={this.props.auth}>
-		     </MovieRow>);
+		.map( movie => <MovieRow
+			key={movie.movieKey}
+			movie={movie}
+			auth={this.props.auth}>
+		</MovieRow> );
 
-		     return (
-			     <section className="vote-movie-section">
-				     <h2>Vote</h2>
-				     <table className="pure-table pure-table-striped voting-movies">
-					     <tbody>
-						     {movies}
-					     </tbody>
-				     </table>
-			     </section>
-		     );
+		return (
+			<section className="voting-movies">
+				<h2>Vote</h2>
+				<table className="pure-table pure-table-striped voting-movies">
+					<tbody>
+						{movies}
+					</tbody>
+				</table>
+			</section>
+		);
 	}
 });
 

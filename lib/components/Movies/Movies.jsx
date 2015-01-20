@@ -3,7 +3,7 @@
 import React from 'react';
 
 import AddMovie from 'components/Movies/AddMovie/AddMovie';
-import VotingMovies from 'components/Movies/VoteMovie/Vote';
+import VotingMovies from 'components/Movies/VoteMovie/VotingMovies';
 
 var Movies = React.createClass({
 	render: function(){
