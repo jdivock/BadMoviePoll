@@ -23,6 +23,7 @@
 		"gapi": false,
 		"jest": false,
 		"describe": false,
-		"it": false
+		"it": false,
+		"expect": false
 	}
 }

@@ -16,5 +16,9 @@ describe('Welcome.jsx', function(){
 			<Welcome auth={authMock} />
 		);
 
+		var header = TestUtils.findRenderedDOMComponentWithTag(WelcomeTestCmp, 'h5');
+
+		expect(header.getDOMNode().textContent).toEqual('Signed in as jay dee');
+
 	});
 });
