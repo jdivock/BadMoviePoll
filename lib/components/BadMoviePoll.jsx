@@ -6,10 +6,11 @@ import debugLib from 'debug';
 import Auth from 'services/Auth';
 import MovieService from 'services/MovieService';
 
-import Movies from 'components/Movies/Movies';
 import Login from 'components/Login/Login';
 import Welcome from 'components/Login/Welcome';
 import UpcomingMovies from 'components/Movies/UpcomingMovies';
+import AddMovie from 'components/Movies/AddMovie/AddMovie';
+import VotingMovies from 'components/Movies/VoteMovie/VotingMovies';
 
 let debug = debugLib('BadMoviePoll:BadMoviePoll.jsx');
 
@@ -47,24 +48,37 @@ var BadMoviePoll = React.createClass({
 		};
 	},
 	render: function() {
-		var content = '';
+		var loginContent, addMovieContent;
 
-		return (
-			<article className='bad-movie-poll'>
+		if( !this.state.auth.profile ){
+			// unauth'd content
+			loginContent = (
 				<Login
 					auth={this.state.auth}
 					>
-				</Login>
+				</Login>);
+		} else {  // auth'd content
+			addMovieContent = (
+				<AddMovie
+					movies={this.state.movies}
+					auth={this.state.auth}
+				></AddMovie>
+			);
+		}
+
+		return (
+			<article className='bad-movie-poll'>
+				{loginContent}		
 				<UpcomingMovies
 					movies={this.state.movies}
 					auth={this.state.auth}
 					>
 				</UpcomingMovies>
-				<Movies
-					movies={this.state.movies}
+				{addMovieContent}
+				<VotingMovies
+					votingMovies={this.state.movies.votingMovies}
 					auth={this.state.auth}
-					>
-				</Movies>
+				></VotingMovies>
 			</article>
 		);
 	}

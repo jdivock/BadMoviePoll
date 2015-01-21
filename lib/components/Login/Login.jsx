@@ -1,3 +1,5 @@
+'use strict';
+
 import React from 'react';
 
 var Login = React.createClass({
@@ -5,7 +7,6 @@ var Login = React.createClass({
 		gapi.auth.signIn();
 	},	
 	render: function(){
-
 		return (
 			<button className="pure-button" onClick={this.gLogin}>Login</button>
 		);
