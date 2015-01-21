@@ -6,8 +6,10 @@ module.exports = {
 	},
 	module: {
 		loaders: [
-		{test: /\.jsx$/, loader: 'traceur?runtime!jsx-loader'},
-		{test: /\.js$/, exclude: /node_modules/, loader: 'traceur?runtime'},
+		 { test: /\.js$/, exclude: /node_modules/, loader: '6to5-loader'},
+		 { test: /\.jsx$/, loader: '6to5-loader' },
+//		{test: /\.jsx$/, loader: 'traceur?runtime!jsx-loader'},
+//		{test: /\.js$/, exclude: /node_modules/, loader: 'traceur?runtime'},
 		{test: /\.less$/, loader: 'style-loader!css-loader!less-loader'},
 		{test: /\.css$/, loader: 'style-loader!css-loader'},
 		{test: /\.woff(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&minetype=application/font-woff" },

@@ -1,6 +1,7 @@
 'use strict';
 
 require('./main.less');
+require('6to5/polyfill');
 
 import React from 'react';
 import BadMoviePoll from 'components/BadMoviePoll';

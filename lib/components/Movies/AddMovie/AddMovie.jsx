@@ -60,7 +60,6 @@ var AddMovie = React.createClass({
 	},
 	searchMovies: function(e){
 		e.preventDefault();
-
 		this.throttleSearch();
 	},
 	clearResults: function(){

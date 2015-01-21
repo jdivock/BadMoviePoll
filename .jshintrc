@@ -20,6 +20,9 @@
 	"trailing": true,
 	"smarttabs": true,
 	"globals": {
-		"gapi": false
+		"gapi": false,
+		"jest": false,
+		"describe": false,
+		"it": false
 	}
 }

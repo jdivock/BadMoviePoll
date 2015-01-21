@@ -1,0 +1,21 @@
+'use strict';
+
+// TODO: picked way to heavy a component to get started, will pick up another time
+
+jest.dontMock('../lib/components/Movies/AddMovie/AddMovie.jsx');
+
+describe('AddMovie', function(){
+	it('instantiate component', function(){
+		var React = require('react/addons');
+		var AddMovie = require('../lib/components/Movies/AddMovie/AddMovie.jsx');
+
+		var TestUtils = React.addons.TestUtils;
+
+		var mockMovies = [ { id: 1234 } ];
+		var mockAuth = { profile: { isAdmin: false, id: 1234 } }; 
+
+		var TestCmpt = TestUtils.renderIntoDocument(
+			<AddMovie movies={mockMovies}/>
+		);
+	});
+});

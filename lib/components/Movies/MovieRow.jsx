@@ -8,6 +8,7 @@ let log = debug('BadMoviePoll:MovieRow.jsx');
 
 var MovieRow = React.createClass({
 
+	// jshint camelcase: false
 	render: function(){
 		return(
 			<tr>
@@ -26,6 +27,7 @@ var MovieRow = React.createClass({
 			</tr>
 		);
 	}
+	// jshint camelcase: true 
 });
 
 export default MovieRow;

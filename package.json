@@ -4,9 +4,26 @@
   "description": "Polling app for BadMovieNight™ @ Huge",
   "main": "main.jsx",
   "scripts": {
-    "test": "echo \"Oops: no test specified . . . yet\" && exit 0",
+    "test": "jest",
     "postinstall": "webpack -dp",
     "dev": "webpack -wcd"
+  },
+  "jest": {
+    "scriptPreprocessor": "node_modules/6to5-jest",
+    "testFileExtensions": [
+      "es6",
+      "js",
+      "jsx"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "es6",
+      "jsx"
+    ],
+    "unmockedModulePathPatterns": [
+      "node_modules/react"
+          ]
   },
   "repository": {
     "type": "git",
@@ -25,8 +42,12 @@
   },
   "homepage": "https://github.com/jdivock/BadMoviePoll",
   "devDependencies": {
+    "6to5": "^2.13.3",
+    "6to5-jest": "^1.0.0",
+    "6to5-loader": "^2.0.0",
     "file-loader": "^0.8.1",
-    "traceur-loader": "^0.6.3",
+    "jest": "^0.1.37",
+    "jest-cli": "^0.2.1",
     "url-loader": "^0.5.5",
     "webpack": "^1.5.1"
   },
@@ -42,6 +63,7 @@
     "lodash": "^2.4.1",
     "purecss": "^0.5.0",
     "react": "^0.12.2",
+    "react-tools": "^0.12.2",
     "style-loader": "^0.8.3"
   }
 }
