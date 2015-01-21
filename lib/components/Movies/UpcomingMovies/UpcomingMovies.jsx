@@ -5,7 +5,7 @@ require('./UpcomingMovies.less');
 import _ from 'lodash';
 import React from 'react';
 import MovieService from 'services/MovieService';
-import UpcomingMovieDate from 'components/Movies/UpcomingMovieDate';
+import UpcomingMovieDate from 'components/Movies/UpcomingMovies/UpcomingMovieDate';
 import debugLib from 'debug';
 
 let debug = debugLib('UpcomingMovies.jsx');

@@ -8,7 +8,7 @@ import MovieService from 'services/MovieService';
 
 import Login from 'components/Login/Login';
 import Welcome from 'components/Login/Welcome';
-import UpcomingMovies from 'components/Movies/UpcomingMovies';
+import UpcomingMovies from 'components/Movies/UpcomingMovies/UpcomingMovies';
 import AddMovie from 'components/Movies/AddMovie/AddMovie';
 import VotingMovies from 'components/Movies/VoteMovie/VotingMovies';
 
