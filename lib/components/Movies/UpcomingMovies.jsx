@@ -23,18 +23,16 @@ var UpcomingMovies = React.createClass({
 				<td>
 					<a href={movie.links.alternate} target="_blank">
 						<img src={movie.posters.thumbnail}/>
-					</a>
-				</td>
-				<td>
-					<a href={movie.links.alternate} target="_blank">
+
 						{movie.title} ({movie.year})
 					</a>
-				</td>
-				<td>
+					<b>@</b>
 					<UpcomingMovieDate
 						auth={this.props.auth}
 						movie={movie}>
 					</UpcomingMovieDate>
+				</td>
+				<td>
 				</td>
 			</tr>	
 		);

@@ -1,6 +1,6 @@
 'use strict';
 
-require('./VoteMovieCell.less');
+require('./VoteMovieControls.less');
 
 import React from 'react';
 import MovieService from 'services/MovieService';
@@ -84,14 +84,14 @@ var VoteCell = React.createClass({
 		}
 
 		return (
-			<td className="vote-movie-cell">
+			<div className="vote-movie-controls">
 				<ActiveMovieButton
 					auth={this.props.auth}
 					movie={this.props.movie}
 					>
 				</ActiveMovieButton>
 				{content}
-			</td>
+			</div>
 		);
 	}
 

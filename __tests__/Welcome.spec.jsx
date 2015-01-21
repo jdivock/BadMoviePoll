@@ -3,7 +3,7 @@
 jest.dontMock('../lib/components/Login/Welcome.jsx');
 
 describe('Welcome.jsx', function(){
-	it('can be built in jest', function(){
+	it('Displays the user\'s name in the welcome header', function(){
 
 		var React = require('react/addons');
 		var Welcome = require('../lib/components/Login/Welcome.jsx');

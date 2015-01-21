@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "postinstall": "webpack -dp",
-    "dev": "webpack -wcd"
+    "dev": "webpack -wcd & live-server"
   },
   "jest": {
     "scriptPreprocessor": "node_modules/6to5-jest",

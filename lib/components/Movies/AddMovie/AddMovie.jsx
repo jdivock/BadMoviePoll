@@ -1,6 +1,7 @@
 'use strict';
 
 require('./AddMovie.less');
+require('./MovieSearchResults.less');
 
 import React from 'react/addons';
 import MovieService from 'services/MovieService';
@@ -33,7 +34,7 @@ var MovieSearchResults = React.createClass({
 					</MovieRow>);
 
 		return(
-			<table className="pure-table pure-table-striped">
+			<table className="movie-search-results pure-table pure-table-striped">
 				<tbody>
 					{movieResults}
 				</tbody>
