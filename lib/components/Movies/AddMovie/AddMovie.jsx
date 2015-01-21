@@ -1,48 +1,14 @@
 'use strict';
 
 require('./AddMovie.less');
-require('./MovieSearchResults.less');
 
 import React from 'react/addons';
 import MovieService from 'services/MovieService';
-import MovieRow from 'components/Movies/MovieRow';
+import MovieSearchResults from 'components/Movies/AddMovie/MovieSearchResults';
 import debug from 'debug';
 import _ from 'lodash';
 
 let log = debug('BadMoviePoll:AddMovie.jsx');
-
-
-var MovieSearchResults = React.createClass({
-
-	render: function(){
-		if(!this.props.results){
-			return (<div></div>);
-		}
-
-		if(!this.props.results.length){
-			return (<div>No Results Found.</div>);
-		}
-
-		var movieResults = this.props.results
-			.slice(0,4)
-			.map(movie =>
-					<MovieRow
-						auth={this.props.auth}
-						key={movie.id}
-						movie={movie}
-						clearResults={this.props.clearResults}>
-					</MovieRow>);
-
-		return(
-			<table className="movie-search-results pure-table pure-table-striped">
-				<tbody>
-					{movieResults}
-				</tbody>
-			</table>
-		);
-	}
-});
-
 
 var AddMovie = React.createClass({
 	componentDidMount: function() {
