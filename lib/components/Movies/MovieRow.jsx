@@ -15,15 +15,14 @@ var MovieRow = React.createClass({
 		var cx = React.addons.classSet;
 		var classes = cx({
 			'admin': this.props.auth.profile && this.props.auth.profile.isAdmin
-		});	
+		});
 
 		return(
 			<tr className="movie-row">
 				<td className={classes}>
-					<VoteMovieControls
-						auth={this.props.auth}
-						movie={this.props.movie}
-						clearResults={this.props.clearResults}>
+					<VoteMovieControls auth={this.props.auth}
+						               movie={this.props.movie}
+						               clearResults={this.props.clearResults}>
 					</VoteMovieControls>
 				</td>
 				<td>
@@ -38,7 +37,7 @@ var MovieRow = React.createClass({
 			</tr>
 		);
 	}
-	// jshint camelcase: true 
+	// jshint camelcase: true
 });
 
 export default MovieRow;

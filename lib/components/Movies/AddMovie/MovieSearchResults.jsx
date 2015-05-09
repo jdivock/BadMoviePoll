@@ -21,14 +21,13 @@ var MovieSearchResults = React.createClass({
 		}
 
 		var movieResults = this.props.results
-			.slice(0,4)
-			.map(movie =>
-					<MovieRow
-						auth={this.props.auth}
-						key={movie.id}
-						movie={movie}
-						clearResults={this.props.clearResults}>
-					</MovieRow>);
+			                   .slice(0,4)
+			                   .map(movie =>
+					               <MovieRow auth={this.props.auth}
+						                     key={movie.id}
+						                     movie={movie}
+						                     clearResults={this.props.clearResults}>
+					               </MovieRow>);
 
 		return(
 			<table className="movie-search-results pure-table pure-table-striped">

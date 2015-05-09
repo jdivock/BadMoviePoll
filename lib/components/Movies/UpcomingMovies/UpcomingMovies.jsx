@@ -19,22 +19,20 @@ var UpcomingMovies = React.createClass({
 		var content = _.map(
 			this.props.movies.currentMovies,
 			movie =>
-			<tr key={movie.movieKey}>	
+			<tr key={movie.movieKey}>
 				<td>
 					<a href={movie.links.alternate} target="_blank">
 						<img src={movie.posters.thumbnail}/>
-
 						{movie.title} ({movie.year})
 					</a>
 					<b>@</b>
-					<UpcomingMovieDate
-						auth={this.props.auth}
-						movie={movie}>
-					</UpcomingMovieDate>
+					<UpcomingMovieDate auth={this.props.auth}
+						               movie={movie}/>
 				</td>
 				<td>
+                    &nbsp;
 				</td>
-			</tr>	
+			</tr>
 		);
 
 
